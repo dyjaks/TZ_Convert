@@ -1,0 +1,10 @@
+Author: Shawn Dyjak
+Email: dyjaks@gmail
+
+NOTICE:
+TZ_Convert should only be used if the program to import the *.ics ignores
+timezones or you WILL be horribly early/late to all your appts.
+
+USAGE:
+perl TZ_Convert <read file> <out file>
+    - Files can be the same
