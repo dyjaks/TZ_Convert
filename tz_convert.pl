@@ -34,6 +34,10 @@ foreach (@lines) {
         (undef, $min, $hour, $day, $mon, $year) = localtime($time);
         my $local_date = sprintf "%d%02d%02dT%02d%02d00Z\n", $year + 1900, $mon + 1, $day, $hour, $min;
         $lines[$count] = "DTEND:$local_date";
+    } elsif ($_ =~ /DTSTART;VALUE=DATE:(\d{8})/) {
+        $lines[$count] = "DTSTART:$1\n";
+    } elsif ($_ =~ /DTEND;VALUE=DATE:\d{8}/) {
+        $lines[$count] = "";
     }
     $count++;
 }
